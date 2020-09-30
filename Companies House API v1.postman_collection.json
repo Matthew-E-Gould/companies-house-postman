@@ -1,0 +1,1097 @@
+{
+	"id": "c7d0844b-379b-4684-b35a-9c92aee65da8",
+	"name": "Companies House API",
+	"description": "Postman prototype for use with the UK's Companies House API",
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{api_key}}"
+			}
+		]
+	},
+	"events": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fb056de2-288e-4694-9bc4-0cbb813286de",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "dda0f1d1-97ca-447a-93ff-3d4b83d01936",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variables": [
+		{
+			"key": "api_key",
+			"value": "",
+			"disabled": false
+		},
+		{
+			"key": "company_id",
+			"value": "",
+			"disabled": false
+		},
+		{
+			"key": "director_id",
+			"value": "",
+			"disabled": false
+		},
+		{
+			"key": "filing_id",
+			"value": "",
+			"disabled": false
+		},
+		{
+			"key": "charge_id",
+			"value": "",
+			"disabled": false
+		},
+		{
+			"key": "psc_id",
+			"value": "",
+			"disabled": false
+		},
+		{
+			"key": "statement_id",
+			"value": "",
+			"disabled": false
+		},
+		{
+			"key": "super_secure_id",
+			"value": "",
+			"disabled": false
+		}
+	],
+	"order": [
+		"6a78b48b-4193-457b-b825-4d591d1ba7a0",
+		"852a8f7f-b5b7-4eb4-976d-5fc1dcb8d196",
+		"86613c18-e298-474f-9d36-3953eb22aae0",
+		"04419082-2b88-4f13-b480-1dd9e07bb806",
+		"42d28f79-ca0e-4e69-94cf-28e4790b9d87",
+		"199d2402-ea05-482c-8f8f-f5c839fa68a7",
+		"42836d50-ca18-4810-9354-c266c1091ed5",
+		"0f91ef46-16b1-471d-aafd-fa6bc254c364",
+		"dc27bae0-221e-4719-b918-25e0494fa7da",
+		"93def03d-c096-4246-8091-83130017c226",
+		"04018441-5d07-4783-b52c-d49d015c4f01",
+		"28a86298-b3ef-4015-b9d8-37b84aad68cc",
+		"532ef387-ab0d-4ba4-951f-2d685e78bbdc",
+		"9838ec2f-f443-4800-b9e1-0fd28f3472cd",
+		"8192c172-75c9-4af2-8656-e7e521d82ec0",
+		"11807476-9180-4c73-9acf-ebf2c218993e",
+		"754068cb-e271-4e7a-b27f-45dd99cc6639",
+		"d4f5bf30-4c26-46b3-b5ba-5908d3f4a9e9",
+		"909f32dc-d9f5-446a-9329-74caed6d65b3",
+		"68b37a90-e82f-40af-80bd-33abb4343316",
+		"a0323a46-1edf-4353-b324-659be0aed5dc",
+		"177c2a07-7931-436d-adc1-1ff82f1c2d71",
+		"911006ba-2958-4315-989b-c8af0ec54bd1",
+		"da6d6c24-d46f-49e7-9099-3930270698af",
+		"d68d4c68-2755-4500-bb51-a1f8f6d01dcc"
+	],
+	"folders_order": [],
+	"protocolProfileBehavior": {},
+	"folders": [],
+	"requests": [
+		{
+			"id": "04018441-5d07-4783-b52c-d49d015c4f01",
+			"name": "Charges (list)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/charges?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "04419082-2b88-4f13-b480-1dd9e07bb806",
+			"name": "Search disqualified officer",
+			"url": "https://api.companieshouse.gov.uk/search/disqualified-officers?q=&items_per_page&start_index",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "search query",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": null,
+					"equals": false,
+					"description": "how many items to show",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": null,
+					"equals": false,
+					"description": "offset of items, uses items_per_page (start_index * items_per_page)",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"pathVariables": {}
+		},
+		{
+			"id": "0f91ef46-16b1-471d-aafd-fa6bc254c364",
+			"name": "Filing history (list)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/filing-history?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": null,
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": null,
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "11807476-9180-4c73-9acf-ebf2c218993e",
+			"name": "UK establishment companies",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/uk-establishments?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "177c2a07-7931-436d-adc1-1ff82f1c2d71",
+			"name": "Persons with significant control (get, statements)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/persons-with-significant-control-statements/{{statement_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "199d2402-ea05-482c-8f8f-f5c839fa68a7",
+			"name": "Registered office address",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/registered-office-address?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": null,
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": null,
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "28a86298-b3ef-4015-b9d8-37b84aad68cc",
+			"name": "Charges (get)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/charges/{{charge_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "42836d50-ca18-4810-9354-c266c1091ed5",
+			"name": "Company Officers",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/officers?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": null,
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": null,
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "42d28f79-ca0e-4e69-94cf-28e4790b9d87",
+			"name": "Company profile",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "532ef387-ab0d-4ba4-951f-2d685e78bbdc",
+			"name": "Officer Appointment List",
+			"url": "https://api.companieshouse.gov.uk/officers/{{director_id}}/charges?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "68b37a90-e82f-40af-80bd-33abb4343316",
+			"name": "Persons with significant control (legal persons)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/persons-with-significant-control/legal-person/{{psc_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "6a78b48b-4193-457b-b825-4d591d1ba7a0",
+			"name": "Search all",
+			"url": "https://api.companieshouse.gov.uk/search?q=&items_per_page&start_index",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "search query",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": null,
+					"equals": false,
+					"description": "how many items to show",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": null,
+					"equals": false,
+					"description": "offset of items, uses items_per_page (start_index * items_per_page)",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"pathVariables": {}
+		},
+		{
+			"id": "754068cb-e271-4e7a-b27f-45dd99cc6639",
+			"name": "Persons with significant control (list)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/persons-with-significant-control?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "8192c172-75c9-4af2-8656-e7e521d82ec0",
+			"name": "Officer disqualifications (corporate)",
+			"url": "https://api.companieshouse.gov.uk/disqualified-officers/corporate/{{director_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "852a8f7f-b5b7-4eb4-976d-5fc1dcb8d196",
+			"name": "Search company",
+			"url": "https://api.companieshouse.gov.uk/search/companies?q=&items_per_page&start_index",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "search query",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": null,
+					"equals": false,
+					"description": "how many items to show",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": null,
+					"equals": false,
+					"description": "offset of items, uses items_per_page (start_index * items_per_page)",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"pathVariables": {}
+		},
+		{
+			"id": "86613c18-e298-474f-9d36-3953eb22aae0",
+			"name": "Search officer",
+			"url": "https://api.companieshouse.gov.uk/search/officers?q=&items_per_page&start_index",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "search query",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": null,
+					"equals": false,
+					"description": "how many items to show",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": null,
+					"equals": false,
+					"description": "offset of items, uses items_per_page (start_index * items_per_page)",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"pathVariables": {}
+		},
+		{
+			"id": "909f32dc-d9f5-446a-9329-74caed6d65b3",
+			"name": "Persons with significant control (corporate entities)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/persons-with-significant-control/corporate-entity/{{psc_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "911006ba-2958-4315-989b-c8af0ec54bd1",
+			"name": "Persons with significant control (super secure person)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/persons-with-significant-control/super-secure/{{super_secure_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "93def03d-c096-4246-8091-83130017c226",
+			"name": "Insolvency",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/insolvency?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "9838ec2f-f443-4800-b9e1-0fd28f3472cd",
+			"name": "Officer disqualifications (natural)",
+			"url": "https://api.companieshouse.gov.uk/disqualified-officers/natural/{{director_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "a0323a46-1edf-4353-b324-659be0aed5dc",
+			"name": "Persons with significant control (list, statements)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/persons-with-significant-control-statements?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "d4f5bf30-4c26-46b3-b5ba-5908d3f4a9e9",
+			"name": "Persons with significant control (individual)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/persons-with-significant-control/{{psc_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "d68d4c68-2755-4500-bb51-a1f8f6d01dcc",
+			"name": "Company exemptions",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/exemptions?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "da6d6c24-d46f-49e7-9099-3930270698af",
+			"name": "Company registers",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/registers?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "dc27bae0-221e-4719-b918-25e0494fa7da",
+			"name": "Filing history (specific)",
+			"url": "https://api.companieshouse.gov.uk/company/{{company_id}}/filing-history/{{filing_id}}?q=&items_per_page=&start_index=",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "q",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "items_per_page",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start_index",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		}
+	]
+}
